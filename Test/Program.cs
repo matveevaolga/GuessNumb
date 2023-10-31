@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Test;
 
 //int int_input, k;
@@ -37,21 +37,34 @@ using Test;
 //int[] a = { 1, 2, 3 };
 //if (a != null) Console.WriteLine(a);
 //else; 
-static bool GuessNumb(int target)
+static bool IsGuessNumber(int target)
 {
     int input = int.Parse(Console.ReadLine());
     return input == target;
 }
 
-Random random = new Random();
-int target = random.Next(0, 100);
-for (int i = 0; i < 5; i++)
+static int GetRandomNumber()
 {
-    Console.WriteLine($"Попытка {i + 1}:");
-    if (GuessNumb(target))
+    Random random = new();
+    int target = random.Next(0, 100);
+
+    return target;
+}
+
+static void Game()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine($"Попытка {i + 1}:");
+    }
+  
+    if (IsGuessNumber(target))
     {
         Console.WriteLine("Вы угадали!");
         target = -1;
     }
+  
+    if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
 }
-if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
+
+Game();
