@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Test;
 
 //int int_input, k;
@@ -57,6 +57,14 @@ static void Game()
     {
         Console.WriteLine($"Попытка {i + 1}:");
     }
+  
+    if (IsGuessNumber(target))
+    {
+        Console.WriteLine("Вы угадали!");
+        target = -1;
+    }
+  
+    if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
 }
 
 Game();
