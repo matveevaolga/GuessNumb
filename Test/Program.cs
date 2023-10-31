@@ -53,6 +53,8 @@ static int GetRandomNumber()
 
 static void Game()
 {
+    int target = GetRandomNumber();
+
     for (int i = 0; i < 5; i++)
     {
         Console.WriteLine($"Попытка {i + 1}:");
@@ -61,10 +63,11 @@ static void Game()
     if (IsGuessNumber(target))
     {
         Console.WriteLine("Вы угадали!");
-        target = -1;
     }
-  
-    if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
+    else
+    {
+        if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
+    }
 }
 
 Game();
