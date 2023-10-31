@@ -45,7 +45,7 @@ static bool IsGuessNumber(int target)
 
 static int GetRandomNumber()
 {
-    Random random = new Random();
+    Random random = new();
     int target = random.Next(0, 100);
 
     return target;
