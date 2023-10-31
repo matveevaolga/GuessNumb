@@ -48,4 +48,10 @@ int target = random.Next(0, 100);
 for (int i = 0; i < 5; i++)
 {
     Console.WriteLine($"Попытка {i + 1}:");
+    if (GuessNumb(target))
+    {
+        Console.WriteLine("Вы угадали!");
+        target = -1;
+    }
 }
+if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
