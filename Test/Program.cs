@@ -50,21 +50,3 @@ static int GetRandomNumber()
 
     return target;
 }
-
-static void Game()
-{
-    for (int i = 0; i < 5; i++)
-    {
-        Console.WriteLine($"Попытка {i + 1}:");
-    }
-  
-    if (IsGuessNumber(target))
-    {
-        Console.WriteLine("Вы угадали!");
-        target = -1;
-    }
-  
-    if (target != -1) Console.WriteLine($"Вы не угадали, заданное число - {target}");
-}
-
-Game();
