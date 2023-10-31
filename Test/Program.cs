@@ -37,15 +37,26 @@ using Test;
 //int[] a = { 1, 2, 3 };
 //if (a != null) Console.WriteLine(a);
 //else; 
-static bool GuessNumb(int target)
+static bool IsGuessNumber(int target)
 {
     int input = int.Parse(Console.ReadLine());
     return input == target;
 }
 
-Random random = new Random();
-int target = random.Next(0, 100);
-for (int i = 0; i < 5; i++)
+static int GetRandomNumber()
 {
-    Console.WriteLine($"Попытка {i + 1}:");
+    Random random = new Random();
+    int target = random.Next(0, 100);
+
+    return target;
 }
+
+static void Game()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine($"Попытка {i + 1}:");
+    }
+}
+
+Game();
