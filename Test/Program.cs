@@ -37,17 +37,15 @@ using Test;
 //int[] a = { 1, 2, 3 };
 //if (a != null) Console.WriteLine(a);
 //else; 
-static bool IsGuessNumber(int target)
+static bool IsGuessNumber(int target, int input)
 {
-    int input = int.Parse(Console.ReadLine());
     return input == target;
 }
 
-static int GetRandomNumber()
+static int RandomNumber()
 {
     Random random = new();
     int target = random.Next(0, 100);
-
     return target;
 }
 
@@ -60,7 +58,7 @@ static void Game()
         Console.WriteLine($"Попытка {i + 1}:");
     }
   
-    if (IsGuessNumber(target))
+    if (target)
     {
         Console.WriteLine("Вы угадали!");
     }
